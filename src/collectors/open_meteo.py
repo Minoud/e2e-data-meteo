@@ -71,3 +71,4 @@ class OpenMeteoCollector(BaseCollector):
 
             with open(file_path, "w") as f:
                 json.dump(city_data, f)
+        print(f"Saved {len(data.items())} files at {self.output_dir}")
