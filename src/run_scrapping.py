@@ -8,8 +8,10 @@ if __name__ == "__main__":
     collector.save_raw(data)
 
     transformer = WeatherNormalizer()
-    df_clean = transformer.normalize_all()
+    df_clean, df_daily, df_stats= transformer.normalize_all()
     transformer.save_clean(df_clean)
 
     loader = WeatherLoader()
-    loader.load(df_clean)
+    loader.load(df_clean, table_name="weather_clean")
+    loader.load(df_daily, table_name="weather_daily")
+    loader.load(df_stats, table_name="weather_city_stats")
