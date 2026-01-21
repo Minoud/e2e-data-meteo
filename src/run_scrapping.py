@@ -2,7 +2,7 @@ from collectors.open_meteo import OpenMeteoCollector
 from transformers.normalize import WeatherNormalizer
 from loaders.sql_loader import WeatherLoader
 
-if __name__ == "__main__":
+def launch_scrapping():
     collector = OpenMeteoCollector()
     data = collector.fetch()
     collector.save_raw(data)
