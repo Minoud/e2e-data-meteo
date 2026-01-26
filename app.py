@@ -26,9 +26,13 @@ date_range = st.date_input(
     [df_daily["date"].min(), df_daily["date"].max()]
 )
 
+start_date = pd.to_datetime(date_range[0])
+end_date   = pd.to_datetime(date_range[1])
+
+
 df_daily_filtered = df_daily[
     (df_daily["city"] == city) &
-    (df_daily["date"].between(*date_range))
+    (df_daily["date"].between(start_date,end_date))
 ]
 
 st.metric("Max temperature", f"{df_daily_filtered['temp_max'].max():.1f}°C")
