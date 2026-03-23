@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 from .base_collector import BaseCollector
-from cities import CITIES
+from ..cities import CITIES
 
 BASE_URL = "https://api.open-meteo.com/v1/forecast"
 

@@ -1,6 +1,6 @@
-from collectors.open_meteo import OpenMeteoCollector
-from transformers.normalize import WeatherNormalizer
-from loaders.sql_loader import WeatherLoader
+from .collectors.open_meteo import OpenMeteoCollector
+from .transformers.normalize import WeatherNormalizer
+from .loaders.sql_loader import WeatherLoader
 
 def launch_scrapping():
     collector = OpenMeteoCollector()
